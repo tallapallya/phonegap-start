@@ -26,6 +26,16 @@ run(function () {
 			}
 		});
 	});
+
+   when('#camera', function() {
+
+      // Take picture using device camera and retrieve image as base64-encoded string
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+        destinationType: destinationType.DATA_URL });
+
+   });
+
+
     when('#map', function () {
         store.get('config', function (saved) {
             // construct a gmap str
